@@ -5,11 +5,11 @@ A Chrome extention that grabs title and call number information from the WRLC Vo
 
 ## Installing
 
-The packaged extention can be added to Chrome [here](https://chrome.google.com/webstore/detail/wrlc-call-slips/dffclpmiijffakenibfpcpgheldnmfko).
+The packaged extention can be added to Chrome [here](https://chrome.google.com/webstore/detail/wrlc-call-slips/dffclpmiijffakenibfpcpgheldnmfko). That having been said it will only work out of the box for Washington Research Library Consortium Libraries -- and only under the Voyager Catalog. To use it follow the local modification instruction below, package it as a .zip and then either side load it directly into a Chrome instance, or upload it to the extention webstore.
 
 ## Local modification
 
-This extention will only work in the Washington Research Library Consortium but it can serve as a template for any other Library that wants to implement it. In the 'payload.js' file find a distinguishing element that wraps around some instance of call numbers and titles and then edit the code to include them
+In the 'payload.js' file find a distinguishing element that wraps around some instance of call numbers and titles and then edit the code to include them
 
 ```
 var aCount = document.body.getElementsByTagName("a").length;
@@ -30,7 +30,7 @@ var callTitle = [callNo, displayTitle];
 
 chrome.runtime.sendMessage(callTitle);
 ```
-The payload.js file is injected into the active page, and then sends a message back to the background process which in turn takes that information and puts it into the call slip.
+The 'payload.js' file is injected into the active page, and then sends a message back to the background process which in turn takes that information and puts it into the call slip.
 
 ## License
 
